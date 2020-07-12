@@ -1,4 +1,4 @@
-package ca.sfu.cmpt213.assignment3;
+package ca.sfu.cmpt213.a3.onlinesuperherotracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

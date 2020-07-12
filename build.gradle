@@ -13,13 +13,15 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.7.RELEASE'
 }
 
-group 'PledgeToVote'
+group 'OnlineSuperheroTracker'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
+
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("com.google.code.gson:gson:2.8.6")
 }
