@@ -1,0 +1,38 @@
+# Read hello
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/hello
+
+# List all superheroes
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/listAll
+
+# Add Batman as a new superhero, the escape character for the " is for Windows systems
+curl -i -H "Content-Type: application/json" -X POST -d "{ \"name\": \"Batman\", \"heightInCm\": 183.0, \"civilianSaveCount\": 100, \"superPower\": \"Super rich\" }" localhost:8080/add
+
+# Add Captain Marvel as a new superhero, the escape character for the " is for Windows systems
+curl -i -H "Content-Type: application/json" -X POST -d "{ \"name\": \"Captain Marvel\", \"heightInCm\": 170, \"civilianSaveCount\": 200, \"superPower\": \"Proton Blast\" }" localhost:8080/add
+
+# Add Strom as a new superhero, the escape character for the " is for Windows systems
+curl -i -H "Content-Type: application/json" -X POST -d "{ \"name\": \"Storm\", \"heightInCm\": 200, \"civilianSaveCount\": 300, \"superPower\": \"Control Weather\" }" localhost:8080/add
+
+# Add Earthworm Jim as a new superhero, the escape character for the " is for Windows systems
+curl -i -H "Content-Type: application/json" -X POST -d "{ \"name\": \"Earthworm Jim\", \"heightInCm\": 173, \"civilianSaveCount\": 0, \"superPower\": \"Superior Strength\" }" localhost:8080/add
+
+# Add Ultraman as a new superhero, but with an invalid argument (height), the escape character for the " is for Windows systems
+curl -i -H "Content-Type: application/json" -X POST -d "{ \"name\": \"Ultraman\", \"heightInCm\": -2, \"civilianSaveCount\": 0, \"superPower\": \"Super rich\" }" localhost:8080/add
+
+# Remove superhero with id = 3, the escape character for the " is for Windows systems
+curl -i -H "Content-Type: application/json" -X POST localhost:8080/remove/3
+
+# Remove superhero with id = 100, which is an invalid id, the escape character for the " is for Windows systems
+curl -i -H "Content-Type: application/json" -X POST localhost:8080/remove/100
+
+# Update info of superhero with id = 1, the escape character for the " is for Windows systems
+curl -i -H "Content-Type: application/json" -X POST -d "{ \"name\": \"Batman\", \"heightInCm\": 183.0, \"civilianSaveCount\": 150, \"superPower\": \"Super rich\" }" localhost:8080/update/1
+
+# Update info of superhero with id = 100, which is an invalid id, the escape character for the " is for Windows systems
+curl -i -H "Content-Type: application/json" -X POST -d "{ \"name\": \"Batman\", \"heightInCm\": 183.0, \"civilianSaveCount\": 150, \"superPower\": \"Super rich\" }" localhost:8080/update/100
+
+# Update info of superhero with id = 2, with an invalid argument (height), the escape character for the " is for Windows systems
+curl -i -H "Content-Type: application/json" -X POST -d "{ \"name\": \"Captain Marvel\", \"heightInCm\": -1, \"civilianSaveCount\": 200, \"superPower\": \"Proton Blast\" }" localhost:8080/update/2
+
+
+

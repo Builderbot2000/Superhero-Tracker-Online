@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"ca.sfu.cmpt213.a3.onlinesuperherotracker"},{"l":"ca.sfu.cmpt213.a3.onlinesuperherotracker.controllers"},{"l":"ca.sfu.cmpt213.a3.onlinesuperherotracker.model"}]

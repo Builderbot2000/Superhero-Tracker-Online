@@ -1,28 +1,24 @@
 package ca.sfu.cmpt213.a3.onlinesuperherotracker.model;
 
-/** The central object of the entire program, represents a superhero.
+/**
+ * Object representation of a superhero.
+ * Contains information of the hero's name, height, superpower, and number of civilians they saved.
  */
-public class Superhero {
+public class Superhero implements Comparable<Superhero>{
     private long id;
     private String name;
-    private String superpower;
-    private double height;
-    private int civiliansSaved;
+    private double heightInCm;
+    private int civilianSaveCount;
+    private String superPower;
 
-    /**
-     * Constructs a new Superhero object based on input fields.
-     * @param id identification for the hero so that it can be recognized through web interfaces
-     * @param name input name field.
-     * @param superpower input superpower field.
-     * @param height input height field.
-     * @param civiliansSaved input civiliansSaved field.
-     */
-    public Superhero(long id, String name, String superpower, double height, int civiliansSaved) {
+    public Superhero() {}
+
+    public Superhero(long id, String name, double height, int civiliansSaved, String superpower) {
         this.id = id;
         this.name = name;
-        this.superpower = superpower;
-        this.height = height;
-        this.civiliansSaved = civiliansSaved;
+        this.heightInCm = height;
+        this.civilianSaveCount = civiliansSaved;
+        this.superPower = superpower;
     }
 
     public long getId() {
@@ -33,7 +29,7 @@ public class Superhero {
         this.id = id;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
@@ -41,39 +37,32 @@ public class Superhero {
         this.name = name;
     }
 
-    String getSuperpower() {
-        return superpower;
+    public double getHeightInCm() {
+        return heightInCm;
     }
 
-    public void setSuperpower(String superpower) {
-        this.superpower = superpower;
+    public void setHeightInCm(double heightInCm) {
+        this.heightInCm = heightInCm;
     }
 
-    double getHeight() {
-        return height;
+    public int getCivilianSaveCount() {
+        return civilianSaveCount;
     }
 
-    public void setHeight(double height) {
-        this.height = height;
+    public void setCivilianSaveCount(int civilianSaveCount) {
+        this.civilianSaveCount = civilianSaveCount;
     }
 
-    int getCiviliansSaved() {
-        return civiliansSaved;
+    public String getSuperPower() {
+        return superPower;
     }
 
-    public void setCiviliansSaved(int civiliansSaved) {
-        this.civiliansSaved = civiliansSaved;
+    public void setSuperPower(String superPower) {
+        this.superPower = superPower;
     }
 
-    /**
-     * Information dump of a hero's data fields.
-     * @return The name, superpower, height, civiliansSaved fields composed into one line as a string.
-     */
-    @java.lang.Override
-    public java.lang.String toString() {
-        return  "Name: " + name +
-                ", Superpower: " + superpower +
-                ", Height: " + height +
-                ", Civilians Saved: " + civiliansSaved;
+    @Override
+    public int compareTo(Superhero o) {
+        return Integer.compare(this.getCivilianSaveCount(),o.getCivilianSaveCount());
     }
 }
