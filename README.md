@@ -1,4 +1,4 @@
-# Superhero-Tracker-Basic
+# Superhero-Tracker-Online
 An online version of the Superhero-Tracker-Basic program
 
 Created for assignment 3 part 2 in the CMPT 213 course of the SFU Computing Program, this program can be tested in the Intellij IDE.
